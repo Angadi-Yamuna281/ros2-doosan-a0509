@@ -1,7 +1,10 @@
-# ROS 2 build artifacts
+# ROS 2
 build/
 install/
 log/
+
+# Colcon
+*.log
 
 # Python
 __pycache__/
@@ -10,5 +13,5 @@ __pycache__/
 # VS Code
 .vscode/
 
-# OS files
+# OS
 .DS_Store

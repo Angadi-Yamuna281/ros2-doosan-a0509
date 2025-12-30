@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="default">
+
+    <!-- 🌞 Add Sunlight -->
+    <include>
+      <uri>model://sun</uri>
+    </include>
+
+    <!-- 🌍 Add Ground Plane -->
+    <include>
+      <uri>model://ground_plane</uri>
+    </include>
+
+    <!-- 🎮 Tic Tac Toe Board (positioned close to robot) -->
+    <include>
+      <uri>model://tictactoe_board</uri>
+      <!-- pose format: x y z roll pitch yaw -->
+      <!-- Adjusted so the board is closer and slightly raised -->
+      <pose>0.40 0.00 0.73 0 0 0</pose>
+    </include>
+
+    <!-- ROS Factory Plugin -->
+    <plugin name="gazebo_ros_factory" filename="libgazebo_ros_factory.so"/>
+
+  </world>
+</sdf>

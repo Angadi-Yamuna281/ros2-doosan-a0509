@@ -1,0 +1,99 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="tictactoe_board">
+    <!-- Keep same position, just smaller board -->
+    <pose>0.45 0.0 0.75 0 0 0</pose>
+    <static>true</static>
+
+    <!-- Board base -->
+    <link name="board_base">
+      <pose>0 0 0 0 0 0</pose>
+
+      <collision name="collision">
+        <geometry>
+          <box>
+            <size>0.48 0.48 0.016</size> <!-- Reduced from 0.6 to 0.48 -->
+          </box>
+        </geometry>
+      </collision>
+
+      <visual name="board_visual">
+        <geometry>
+          <box>
+            <size>0.48 0.48 0.016</size> <!-- Reduced -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0.3 0.3 0.3 1</ambient>
+          <diffuse>0.4 0.4 0.4 1</diffuse>
+          <specular>0.1 0.1 0.1 1</specular>
+        </material>
+        <pose>0 0 0.008 0 0 0</pose>
+      </visual>
+    </link>
+
+    <!-- Grid lines - adjusted for smaller board -->
+    <!-- Vertical lines -->
+    <link name="vline1">
+      <pose>-0.08 0 0.018 0 0 0</pose> <!-- -0.1 → -0.08 -->
+      <visual name="visual_v1">
+        <geometry>
+          <box>
+            <size>0.016 0.48 0.002</size> <!-- 0.02x0.6 → 0.016x0.48 -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <link name="vline2">
+      <pose>0.08 0 0.018 0 0 0</pose> <!-- 0.1 → 0.08 -->
+      <visual name="visual_v2">
+        <geometry>
+          <box>
+            <size>0.016 0.48 0.002</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <!-- Horizontal lines -->
+    <link name="hline1">
+      <pose>0 -0.08 0.018 0 0 0</pose> <!-- -0.1 → -0.08 -->
+      <visual name="visual_h1">
+        <geometry>
+          <box>
+            <size>0.48 0.016 0.002</size> <!-- 0.6x0.02 → 0.48x0.016 -->
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+    <link name="hline2">
+      <pose>0 0.08 0.018 0 0 0</pose> <!-- 0.1 → 0.08 -->
+      <visual name="visual_h2">
+        <geometry>
+          <box>
+            <size>0.48 0.016 0.002</size>
+          </box>
+        </geometry>
+        <material>
+          <ambient>0 0 0 1</ambient>
+          <diffuse>0 0 0 1</diffuse>
+        </material>
+      </visual>
+    </link>
+
+  </model>
+</sdf>
